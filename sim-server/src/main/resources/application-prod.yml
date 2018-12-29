@@ -1,0 +1,64 @@
+### 线上环境
+#logging:
+#  level:
+#    ROOT: INFO
+#    org.springframework: INFO
+#    java.sql.Connection: DEBUG
+#    java.sql.Statement: DEBUG
+#    org.apache: INFO
+#    org.mongodb.driver: INFO
+#    com.glory.process: DEBUG
+#
+#spring:
+#    jackson:
+#        date-format: yyyy-MM-dd HH:mm:ss
+#        time-zone: GMT+8
+##        default-property-inclusion: non_null
+#        #设置空如何序列化
+#        defaultPropertyInclusion: ALWAYS
+#    sleuth:
+#      enabled: true
+#      http:
+#        legacy:
+#          enabled: true
+#
+#sample:
+#  zipkin:
+#    # When enabled=false, traces log to the console. Comment to send to zipkin
+#    enabled: false
+#
+#mybatis:
+#    configuration:
+#      call-setters-on-nulls: true
+#    basepackage: com.glory.process.mapper
+#    xmlLocation: classpath:mapper/**/*.xml
+#    mapper-locations: "classpath*:mapper/**/*.xml"
+#
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: '*'
+#  security:
+#    enabled: false
+#
+#jwt:
+#  token-header: Authorization
+#  expire: 14400
+#  rsa-secret: xx1WET12^%3^(WE45
+#client:
+#  rsa-secret: x2318^^(*WRYQWR(QW&T
+#
+##工艺品数据库
+#datasource_1:
+#  url: jdbc:sqlserver://localhost:2430;DatabaseName=GloryProcess
+#  driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+#  username: ag
+#  password: QWEqweasd
+#
+##  查询视图的数据库
+#datasource_2:
+#  url: jdbc:sqlserver://localhost:2430;DatabaseName=GloryProcess
+#  driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+#  username: ag
+#  password: QWEqweasd

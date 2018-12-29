@@ -1,0 +1,64 @@
+## 开发环境
+logging:
+  level:
+    ROOT: INFO
+    org.springframework: INFO
+    java.sql.Connection: DEBUG
+    java.sql.Statement: DEBUG
+    org.apache: INFO
+    org.mongodb.driver: INFO
+    com.liansen: DEBUG
+
+spring:
+    jackson:
+        date-format: yyyy-MM-dd HH:mm:ss
+        time-zone: GMT+8
+#        default-property-inclusion: non_null
+        #设置空如何序列化
+        defaultPropertyInclusion: ALWAYS
+    sleuth:
+      enabled: true
+      http:
+        legacy:
+          enabled: true
+
+sample:
+  zipkin:
+    # When enabled=false, traces log to the console. Comment to send to zipkin
+    enabled: false
+
+mybatis:
+    configuration:
+      call-setters-on-nulls: true
+    basepackage: com.liansen.interfaces.mapper
+    xmlLocation: classpath:mapper/**/*.xml
+    mapper-locations: "classpath*:mapper/**/*.xml"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  security:
+    enabled: false
+
+jwt:
+  token-header: Authorization
+  expire: 14400
+  rsa-secret: xx1WET12^%3^(WE45
+client:
+  rsa-secret: x2318^^(*WRYQWR(QW&T
+
+#identity
+datasource_1:
+  url : jdbc:mysql://localhost:3306/ksh?useUnicode=true&characterEncoding=UTF-8
+  driver-class-name: com.mysql.jdbc.Driver
+  username: root
+  password: 123456
+
+#  查询视图的数据库
+#datasource_2:
+#  url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+#  driver-class-name: com.mysql.jdbc.Driver
+#  username: root
+#  password: 123456
